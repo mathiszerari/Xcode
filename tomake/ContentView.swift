@@ -9,7 +9,8 @@ struct ContentView: View {
                 
                 Rectangle()
                     .frame(height: 200)
-                    .background(.blue)
+                    .background(Color("myblue"))
+
                 Text("To Make")
                     .padding(.horizontal, 136)
                     .padding(.top, 20)
@@ -22,21 +23,29 @@ struct ContentView: View {
                 Button {
                     print("Hello World")
                 } label: {
-                    ZStack(alignment: .bottomTrailing, content: {
+                    LazyHGrid(rows: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Rows@*/[GridItem(.fixed(20))]/*@END_MENU_TOKEN@*/,  spacing: 40) {
+                    
+                    Text("Placeholder")
+                            .foregroundColor(.black)
+                    Text("Placeholder")
+                            .foregroundColor(.black)
+                
+                    LazyVGrid(columns: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Columns@*/[GridItem(.fixed(200))]/*@END_MENU_TOKEN@*/, spacing: 40) {
+                        Text(" ")
+                            .frame(width: 100, height: 650)
                         Text("+")
-                            .font(.system(size: 80))
-                            .frame(width: 100, height: 700)
+                            .font(.system(size: 75))
+                            .frame(width: 100, height: 75)
                             .padding(.bottom, 10)
-                            .multilineTextAlignment(.center)
                             .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .background(Color("myblue"))
                             .clipShape(Circle())
-                    })
+                        }
+                    }
                 }
-
             }
+        }
     }
-}
 
 struct Previews_ContentView_Previews: PreviewProvider {
     static var previews: some View {
