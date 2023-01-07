@@ -31,18 +31,16 @@ struct Previews_ContentView_Previews: PreviewProvider {
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .background(.blue)
+            
+            Button(action: {
+                print("Round Action")
+            }) {
+                Text("Press")
+                    .frame(width: 200, height: 700)
+                    .foregroundColor(Color.green)
+                    .background(Color.red)
+                    .clipShape(Circle())
+            }
         }
-        
-        // Create a button to add a task
-        
-        Button(action: {
-                    print("Round Action")
-                    }) {
-                    Text("Press")
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(Color.black)
-                        .background(Color.red)
-                        .clipShape(Circle())
-                }
     }
 }
